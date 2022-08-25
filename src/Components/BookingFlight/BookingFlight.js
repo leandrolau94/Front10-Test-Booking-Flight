@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 import Booking from "./Booking";
 import BookingTimePicker from "./BookingTimePicker";
 import { BookFlightContext } from "../App";
+import Stack from "@mui/material/Stack";
+import Item from "./Item";
 
 const departureFlights = [
   "La Habana",
@@ -98,43 +100,57 @@ const BookingFlight = () => {
           </Grid>
         </Grid>
       </Box>
-      <br />
-      <br />
-      <Typography variant="h6" gutterBottom>
-        Booking Flight Information:
-      </Typography>
-      <br />
-      <br />
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.flightType !== (null || "")
-          ? `Flight Type: ${bookFlightContext.book.flightType}`
-          : `Flight Type: not selected yet`}
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.travelClass !== (null || "")
-          ? `Travel Class: ${bookFlightContext.book.travelClass}`
-          : `Travel Class: not selected yet`}
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.origin !== (null || "")
-          ? `Origin: ${bookFlightContext.book.origin}`
-          : `Origin: not selected yet`}
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.destination !== (null || "")
-          ? `Destination: ${bookFlightContext.book.destination}`
-          : `Destination: not selected yet`}
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.departureDate !== (null || "")
-          ? `Departure Date: ${bookFlightContext.book.departureDate}`
-          : `Departure Date: not selected yet`}
-      </Typography>
-      <Typography variant="h6" gutterBottom>
-        {bookFlightContext.book.returnDate !== (null || "")
-          ? `Returne Date: ${bookFlightContext.book.returnDate}`
-          : `Returne Date: not selected yet`}
-      </Typography>
+      <Box sx={{ width: "100%" }}>
+        <Stack spacing={2}>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              Booking Flight Information:
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.flightType !== (null || "")
+                ? `Flight Type: ${bookFlightContext.book.flightType}`
+                : `Flight Type: not selected yet`}
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.travelClass !== (null || "")
+                ? `Travel Class: ${bookFlightContext.book.travelClass}`
+                : `Travel Class: not selected yet`}
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.origin !== (null || "")
+                ? `Origin: ${bookFlightContext.book.origin}`
+                : `Origin: not selected yet`}
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.destination !== (null || "")
+                ? `Destination: ${bookFlightContext.book.destination}`
+                : `Destination: not selected yet`}
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.departureDate !== (null || "")
+                ? `Departure Date: ${bookFlightContext.book.departureDate}`
+                : `Departure Date: not selected yet`}
+            </Typography>
+          </Item>
+          <Item>
+            <Typography variant="h6" gutterBottom>
+              {bookFlightContext.book.returnDate !== (null || "")
+                ? `Returne Date: ${bookFlightContext.book.returnDate}`
+                : `Returne Date: not selected yet`}
+            </Typography>
+          </Item>
+        </Stack>
+      </Box>
     </>
   );
 };
